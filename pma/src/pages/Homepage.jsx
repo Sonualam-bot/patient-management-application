@@ -11,6 +11,7 @@ export const Homepage = () => {
   const [totalPatients, setTotalPatients] = useState(0);
   const [occupancyRate, setOccupancyRate] = useState(0);
   const [topPerformingWard, setTopPerformingWard] = useState("");
+  const status = useSelector((state) => state.patients.status);
 
   const patients = useSelector((state) => state.patients.patients);
   const wards = useSelector((state) => state.wards.wards);
@@ -67,30 +68,36 @@ export const Homepage = () => {
 
   return (
     <>
-      <div className="home-main  ">
-        <div className="p-2 child-div ">
-          {" "}
-          <p>Total Patients</p> {totalPatients}{" "}
+      {status === "loading" ? (
+        <div>
+          <h1>Loading....</h1>
         </div>
-        <div className="p-2 child-div ">
-          {" "}
-          <p>Occupancy Rate</p> {occupancyRate}{" "}
+      ) : (
+        <div className="home-main  ">
+          <div className="p-2 child-div ">
+            {" "}
+            <p>Total Patients</p> {totalPatients}{" "}
+          </div>
+          <div className="p-2 child-div ">
+            {" "}
+            <p>Occupancy Rate</p> {occupancyRate}{" "}
+          </div>
+          <div className="p-2 child-div ">
+            {" "}
+            <p>Top Performing</p> {topPerformingWard}{" "}
+          </div>
+          <div className="p-2 child-div ">
+            {" "}
+            <p>Github</p>{" "}
+            <Link
+              className="links"
+              to="https://github.com/Sonualam-bot/patient-management-application"
+            >
+              Github
+            </Link>
+          </div>
         </div>
-        <div className="p-2 child-div ">
-          {" "}
-          <p>Top Performing</p> {topPerformingWard}{" "}
-        </div>
-        <div className="p-2 child-div ">
-          {" "}
-          <p>Github</p>{" "}
-          <Link
-            className="links"
-            to="https://github.com/Sonualam-bot/patient-management-application"
-          >
-            Github
-          </Link>
-        </div>
-      </div>
+      )}
     </>
   );
 };
