@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import "../Css/Home.css";
 import { fetchPatients } from "../features/patient/PatientSlice";
 import { fetchWard } from "../features/ward/WardSlice";
+import { Link } from "react-router-dom";
+import "../Css/PForm.css";
 
 export const Homepage = () => {
   const dispatch = useDispatch();
@@ -77,6 +79,16 @@ export const Homepage = () => {
         <div className="p-2 child-div ">
           {" "}
           <p>Top Performing</p> {topPerformingWard}{" "}
+        </div>
+        <div className="p-2 child-div ">
+          {" "}
+          <p>Github</p>{" "}
+          <Link
+            className="links"
+            to="https://github.com/Sonualam-bot/patient-management-application"
+          >
+            Github
+          </Link>
         </div>
       </div>
     </>
