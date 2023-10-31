@@ -1,0 +1,31 @@
+.header-parent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background: #198754;
+    padding: 0rem 1.2rem;
+    color: #fff;
+}
+
+.header-parent > h3{
+    background: inherit;
+}
+
+.header-special{
+    display: flex;
+    width: 20%;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+    background: inherit;
+}
+
+.links {
+    background: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
